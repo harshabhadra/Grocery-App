@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/my_orders_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorProfileBack"
+        tools:context=".ui.order.MyOrdersFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/my_orders_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/order_list_item"
+            android:layout_margin="@dimen/dimen_8dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/no_order_lottie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:lottie_rawRes="@raw/no_order"
+            app:lottie_loop="false"
+            android:visibility="invisible"
+            app:lottie_autoPlay="true"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

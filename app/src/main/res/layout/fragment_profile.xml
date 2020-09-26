@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="user"
+            type="com.a99Spicy.a99spicy.network.Profile" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorProfileBack"
+        tools:context=".ui.profile.ProfileFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:context=".ui.profile.ProfileFragment">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="6dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/white">
+
+                        <com.mikhaellopez.circularimageview.CircularImageView
+                            android:id="@+id/circularImageView"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:src="@drawable/profile_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/user_name_textView"
+                            style="@style/TextAppearance.AppCompat.Title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginTop="24dp"
+                            android:text="@{user.firstName+``+user.lastName}"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/open_sans_bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/circularImageView"
+                            app:layout_constraintTop_toTopOf="@+id/circularImageView"
+                            tools:text="Harsha Bhadra" />
+
+                        <TextView
+                            android:id="@+id/user_phone_textView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:textColor="@android:color/black"
+                            app:layout_constraintEnd_toEndOf="@+id/user_name_textView"
+                            app:layout_constraintStart_toStartOf="@+id/user_name_textView"
+                            app:layout_constraintTop_toBottomOf="@+id/user_name_textView"
+                            tools:text="7982764035" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+<!--                <com.google.android.material.card.MaterialCardView-->
+<!--                    android:id="@+id/profile_address_card"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    app:cardElevation="6dp"-->
+<!--                    app:cardCornerRadius="0dp"-->
+<!--                    android:layout_marginBottom="16dp"-->
+<!--                    app:cardBackgroundColor="@android:color/white">-->
+
+<!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:background="@android:color/white">-->
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/imageView5"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="0dp"-->
+<!--                            android:layout_marginEnd="16dp"-->
+<!--                            app:layout_constraintBottom_toBottomOf="@+id/textView"-->
+<!--                            app:layout_constraintEnd_toEndOf="parent"-->
+<!--                            app:layout_constraintTop_toTopOf="@+id/textView"-->
+<!--                            app:srcCompat="@drawable/ic_baseline_edit_24" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/address_post_code_textView"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginTop="16dp"-->
+<!--                            android:layout_marginEnd="16dp"-->
+<!--                            android:text="@{`Postcode: `+user.shipping.postcode}"-->
+<!--                            app:layout_constraintEnd_toEndOf="parent"-->
+<!--                            app:layout_constraintStart_toStartOf="@+id/textView"-->
+<!--                            app:layout_constraintTop_toBottomOf="@+id/textView" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/textView"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="16dp"-->
+<!--                            android:layout_marginTop="16dp"-->
+<!--                            android:text="@string/delivery_add"-->
+<!--                            android:fontFamily="@font/open_sans"-->
+<!--                            style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"-->
+<!--                            app:layout_constraintStart_toStartOf="parent"-->
+<!--                            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/addres_details_textView"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginTop="8dp"-->
+<!--                            android:layout_marginBottom="16dp"-->
+<!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                            android:text="@{user.shipping.address1}"-->
+<!--                            app:layout_constraintEnd_toEndOf="@+id/address_post_code_textView"-->
+<!--                            app:layout_constraintStart_toStartOf="@+id/address_post_code_textView"-->
+<!--                            app:layout_constraintTop_toBottomOf="@+id/address_post_code_textView" />-->
+<!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--                </com.google.android.material.card.MaterialCardView>-->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="6dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/profile_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/profile_list_item" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/profile_sign_out_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="@android:color/white"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/sign_out"
+                    android:textColor="@android:color/black"
+                    app:cornerRadius="0dp"
+                    app:elevation="6dp" />
+            </LinearLayout>
+        </ScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
